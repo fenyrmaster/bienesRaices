@@ -1,5 +1,5 @@
 import express from "express";
-import { formularioLogin, formularioRegister } from "../controllers/usuarioController.js";
+import { formularioForgotPassword, formularioLogin, formularioRegister } from "../controllers/usuarioController.js";
 
 const routerUsers = express.Router();
 
@@ -12,5 +12,10 @@ routerUsers
 routerUsers
     .route("/register")
     .get(formularioRegister)
+
+//Ruta para recuperar password
+routerUsers
+    .route("/forgotPassword")
+    .get(formularioForgotPassword)
 
 export default routerUsers;
