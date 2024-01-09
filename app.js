@@ -1,6 +1,8 @@
 import express from "express";
 import routerUsers from "./routes/usuarioRoutes.js";
 import db from "./config/db.js";
+import csrf from 'csurf'
+import cookieParser from "cookie-parser";
 
 const app = express();
 
@@ -15,6 +17,13 @@ try{
 
 //Permitir el envio del body (body parser)
 app.use(express.urlencoded({ extended: true }));
+
+//Habilitar cookie parser
+app.use(cookieParser());
+
+//Habilitar CSRF
+app.use(csrf({cookie: true}));
+
 app.use(express.json({limit: "20kb"}));
 
 // Habilitar PUG

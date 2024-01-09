@@ -1,5 +1,5 @@
 import express from "express";
-import { formularioForgotPassword, formularioLogin, formularioRegister, registrar } from "../controllers/usuarioController.js";
+import { formularioForgotPassword, formularioLogin, formularioRegister, registrar, confirmarCuenta } from "../controllers/usuarioController.js";
 
 const routerUsers = express.Router();
 
@@ -18,5 +18,10 @@ routerUsers
 routerUsers
     .route("/forgotPassword")
     .get(formularioForgotPassword)
+
+//Ruta para confirmar nuestra cuenta
+routerUsers
+    .route("/confirmar/:token")
+    .get(confirmarCuenta)
 
 export default routerUsers;
