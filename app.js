@@ -3,6 +3,7 @@ import routerUsers from "./routes/usuarioRoutes.js";
 import db from "./config/db.js";
 import csrf from 'csurf'
 import cookieParser from "cookie-parser";
+import routerPropiedades from "./routes/propiedadesRoutes.js";
 
 const app = express();
 
@@ -35,5 +36,6 @@ app.use(express.static('public'));
 
 //Rutas para los usuarios
 app.use("/auth", routerUsers);
+app.use("/", routerPropiedades)
 
 export default app;
