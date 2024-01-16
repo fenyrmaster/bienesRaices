@@ -1,5 +1,5 @@
 import express from 'express'
-import { admin } from '../controllers/propiedadController.js';
+import { admin, crear } from '../controllers/propiedadController.js';
 
 const routerPropiedades = express.Router();
 
@@ -7,5 +7,10 @@ const routerPropiedades = express.Router();
 routerPropiedades
     .route("/mis-propiedades")
     .get(admin)
+
+//Ruta para crear propiedades
+routerPropiedades
+    .route("/mis-propiedades/crear")
+    .get(crear)
 
 export default routerPropiedades;
