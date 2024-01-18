@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize'
 import db from '../config/db.js'
 
-const Precio = db.define('precios', {
+const Categoria = db.define('categorias', {
     nombre: {
         type: DataTypes.STRING(100),
         allowNull: false
@@ -9,4 +9,4 @@ const Precio = db.define('precios', {
     
 })
 
-export default Precio;
+export default Categoria;
